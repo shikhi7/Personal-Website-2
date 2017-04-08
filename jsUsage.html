@@ -1,0 +1,45 @@
+<DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>shikhi7</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<meta charset="utf-8">
+		<meta name="author" content="Shikhar Mahajan">
+		<meta name="description" content="This is my course assignment of CS251">
+		<meta name="keywords" content="Shikhar, Mahajan, IIT Kanpur, CSE, Computer Science Engineering, Puchchu">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+		<script>
+			var x = 0;
+			function func(){
+			x += 1;
+			document.getElementById("val").innerHTML = x;
+	}
+</script>
+	</head>
+
+	<body>
+
+		<ul id="sidebar">
+	  		<li><a href="newindex.html">Home</a></li>
+	  		<li><a href="academics.html">Academics</a></li>
+	  		<li><a href="interests.html">Personal Interests</a></li>
+	  		<li><a class="active" href="jsUsage.html">Javascript Usage</a></li>
+		</ul>
+
+		<div class="content" id="form">
+			<button onclick="func()">Increase</button>
+			<p id="val"></p>
+
+
+			<form style="padding: 10px 10px 10px 10px">
+				Name of Student:<br>
+				<input type="text" name="Name"><br><br>
+				Area:<br>
+				<input type="text" name="Area"><br><br>
+				Name of faculty member:<br>
+				<input type="text" name="Name of faculty member"><br><br>
+				<input type="submit" value="Submit"><br><br>
+			</form>
+		</div>
+</body>
