@@ -25,13 +25,12 @@
 	                var Frm=Settings.SrcElement(e);
 	                var XML=new XMLWriter();
 	                XML.BeginNode(Frm.name);
-	                XML.Attrib("", "");
 	                var Nodes=Frm.elements;
 	                for (var i=0;i<Nodes.length;i++)
 	                    XML.Node(Nodes[i].name, Nodes[i].value);
 	                XML.EndNode();
 	                XML.Close();
-	                document.getElementById("ExampleOutput").value=XML.ToString().replace(/</g,"\n<");
+	                document.getElementById("Output").value=XML.ToString().replace(/</g,"\n<");
 	            }
 	            catch(Err){
 	                alert("Error: " + Err.description);
@@ -65,7 +64,7 @@
 				<input type="submit" value="Submit"><br><br>
 			</form>
 			<form class="content1" id="form">
-			<textarea id="ExampleOutput" style="width:100%" rows="10"></textarea>
+			<textarea id="Output" style="width:100%" rows="10"></textarea>
 			</form>
 		</div>
 	</body>
