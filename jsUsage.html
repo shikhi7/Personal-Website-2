@@ -9,6 +9,8 @@
 		<meta name="description" content="This is my course assignment of CS251">
 		<meta name="keywords" content="Shikhar, Mahajan, IIT Kanpur, CSE, Computer Science Engineering, Puchchu">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+		<script src="Global.js" language="javascript"></script>
+    	<script src="XMLWriter.js" language="javascript"></script>
 		<script>
 			var x = 0;
 			function func(){
@@ -17,36 +19,13 @@
 			alert("Congratulations! You just increased the value!");
 			}
 
-			function WriteTest(){
-	            try{
-	                var XML=new XMLWriter();
-	                XML.BeginNode("Example");
-	                XML.Attrib("SomeAttribute", "And Some Value");
-	                XML.Attrib("AnotherAttrib", "...");
-	                XML.WriteString("This is an example of the JS XML WriteString method.");
-	                XML.Node("Name", "Value");
-	                XML.BeginNode("SubNode");
-	                XML.BeginNode("SubNode2");
-	                XML.EndNode();
-	                XML.BeginNode("SubNode3");
-	                XML.WriteString("Blah blah.");
-	                XML.EndNode();
-	                XML.Close(); // Takes care of unended tags.
-	                // The replace in the following line are only for making the XML look prettier in the textarea.
-	                document.getElementById("ExampleOutput").value=XML.ToString().replace(/</g,"\n<");
-	            }
-	            catch(Err){
-	                alert("Error: " + Err.description);
-	            }
-	            return false;
-	        	}
 
         	function WriteForm(e){
 	            try{
 	                var Frm=Settings.SrcElement(e);
 	                var XML=new XMLWriter();
 	                XML.BeginNode(Frm.name);
-	                XML.Attrib("Example", "Attribute & Value");
+	                XML.Attrib("", "");
 	                var Nodes=Frm.elements;
 	                for (var i=0;i<Nodes.length;i++)
 	                    XML.Node(Nodes[i].name, Nodes[i].value);
@@ -76,14 +55,17 @@
 			<p id="val"></p>
 
 
-			<form style="padding: 10px 10px 10px 10px" name="User" method="post" action="#" onsubmit="return WriteForm(event);">
+			<form style="padding: 10px 10px 10px 10px" name="Interest" method="post" action="#" onsubmit="return WriteForm(event);">
 				Name of Student:<br>
-				<input type="text" name="Name"><br><br>
+				<input type="text" name="Name of Student"><br><br>
 				Area:<br>
 				<input type="text" name="Area"><br><br>
 				Name of faculty member:<br>
 				<input type="text" name="Name of faculty member"><br><br>
 				<input type="submit" value="Submit"><br><br>
 			</form>
+			<form class="content1" id="form">
+			<textarea id="ExampleOutput" style="width:100%" rows="10"></textarea>
+			</form>
 		</div>
-</body>
+	</body>
